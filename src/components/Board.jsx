@@ -1,22 +1,32 @@
-import React from 'react'
+import React ,{useState} from 'react'
 import Square from './Square'
-const Board = () => {
+const Board = ({board,handleonclick}) => {
+  const renderSquare=(position)=>{
+  return (<Square 
+    value={board[position]}
+    onClick={()=>
+      handleonclick(position)
+    }
+  
+/>
+  );
+  }
   return (
     <div className='board'>
         <div className='board-row'>
-            <Square value={1}/>
-            <Square value={2}/>
-            <Square value={3}/>
+            {renderSquare(1)}
+            {renderSquare(2)}
+            {renderSquare(3)}
         </div>
         <div className='board-row'>
-            <Square value={4}/>
-            <Square value={5}/>
-            <Square value={6}/>
+        {renderSquare(4)}
+        {renderSquare(5)}
+        {renderSquare(6)}
         </div>
         <div className='board-row'>
-            <Square value={7}/>
-            <Square value={8}/>
-            <Square value={9}/>
+        {renderSquare(7)}
+        {renderSquare(8)}
+        {renderSquare(9)}
         </div>
     </div>
   )
