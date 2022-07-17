@@ -1,10 +1,12 @@
 import React,{useState} from "react";
 import Board from "./components/Board";
 import History from "./components/History";
+import Newstatus from "./components/Newstatus";
+
 import { calculateWinner } from "./components/helper";
 import "./styles/Root.scss";
 const app=()=>{
-  const [history,setHistory]=useState([{board:Array(10).fill(null),isNext:true}]);
+  const [history,setHistory]=useState([{board:Array(9).fill(null),isNext:true}]);
   const [currentMove,setcurrentMove]=useState(0);
 
   const current=history[currentMove];
@@ -34,7 +36,8 @@ const app=()=>{
   return (
 <div className="app">
     <h1>TICTACTOE!</h1>
-    <h2>{message}</h2>
+    {/* <h2>{message}</h2> */}
+    <Newstatus winner={winner} current={current}/>
     <Board board={current.board} handleonclick={handleonclick}/>
     <History history={history} toMove={toMove} currentMove={currentMove} />
   </div>
