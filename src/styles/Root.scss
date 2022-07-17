@@ -129,6 +129,16 @@ button {
     }
   }
 }
+.owner{
+    animation: scaleText 1.4s infinite;
+			  @keyframes scaleText {
+			    0% {
+			      transform: 0.5rem;
+			    }
+               
+			  }
+
+}
 
 .bg-balls {
   position: fixed;

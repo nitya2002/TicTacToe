@@ -46,6 +46,7 @@ const app=()=>{
     <button type='button' onClick={newgame} className={`btn-reset ${winner?'active':'normal'}`}>Start New Game</button>
     <h2>Current Game History</h2>
     <History history={history} toMove={toMove} currentMove={currentMove} />
+    <h5 className="owner">by nitya malik</h5>
     <div className="bg-balls"/>
   </div>
   )
