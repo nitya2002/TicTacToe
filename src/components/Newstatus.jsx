@@ -5,7 +5,23 @@ const Newstatus = ({winner,current}) => {
   return (
     // const message=winner?`Winner is ${winner}`:`Next player is ${current.isNext?'X':'O'}`;
     
-    <h2>{winner && `Winner is ${winner}`}{!winner&&!check&&`Next player is ${current.isNext?'X':'O'}`}{!winner&&check&&"O and X is tied"}</h2>
+    <h2>{winner && (
+        <>
+        Winner is <span className={winner==='X'?'text-green':'text-orange'}>
+        {winner}
+        </span>
+        </>
+    )}{!winner&&!check&&(<>
+    Next player is {' '}
+    <span className={current.isNext?'text-green':'text-orange'}>
+    {current.isNext?'X':'O'}
+    </span>
+    </>)}
+    {!winner&&check&&(
+        <>
+        <span className='text-green'>X</span> and <span className='text-orange'>O</span> tied
+        </>
+    )}</h2>
   )
 }
 

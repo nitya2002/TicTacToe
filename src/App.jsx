@@ -43,8 +43,10 @@ const app=()=>{
     {/* <h2>{message}</h2> */}
     <Newstatus winner={winner} current={current}/>
     <Board board={current.board} handleonclick={handleonclick} winningsquares={winningsquares}/>
-    <button type='button' onClick={newgame}>Start New Game</button>
+    <button type='button' onClick={newgame} className={`btn-reset ${winner?'active':'normal'}`}>Start New Game</button>
+    <h2>Current Game History</h2>
     <History history={history} toMove={toMove} currentMove={currentMove} />
+    <div className="bg-balls"/>
   </div>
   )
 }

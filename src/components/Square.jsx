@@ -1,7 +1,7 @@
 import React from 'react'
 
 const square = ({value,onClick,iswinning}) => {
-return <button style={{fontWeight:iswinning?'bold':'normal'}} type="button" className='square' onClick={onClick}>{value}</button>;
+return <button className={`square ${iswinning?'winning':''} ${value=='X'?'text-green':'text-orange'}`} type="button"  onClick={onClick}>{value}</button>;
 
 }
 
